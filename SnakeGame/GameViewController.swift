@@ -11,6 +11,8 @@ import GameplayKit
 
 class GameViewController: UIViewController {
 
+    var play = GameScene(fileNamed: "GameScene")
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -52,7 +54,11 @@ class GameViewController: UIViewController {
             return .all
         }
     }
-
+    
+    @IBAction func respawn(_ sender: UIButton) {
+        play!.reset()
+    }
+    
     override var prefersStatusBarHidden: Bool {
         return true
     }
